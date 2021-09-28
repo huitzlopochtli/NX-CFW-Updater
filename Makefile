@@ -167,6 +167,13 @@ $(BUILD):
 #---------------------------------------------------------------------------------
 clean:
 	@echo clean ...
+	rm -f */*.o 
+	rm -f */*.d 
+	rm -f */*.lst 
+	rm -f */*.map 
+	rm -f *.elf 
+	rm -f *.nacp 
+	rm -f *.nro
 ifeq ($(strip $(APP_JSON)),)
 	@rm -fr $(BUILD) $(TARGET).nro $(TARGET).nacp $(TARGET).elf
 else
@@ -217,10 +224,6 @@ $(OFILES_SRC)	: $(HFILES_BIN)
 
 -include $(DEPENDS)
 
-
 #---------------------------------------------------------------------------------------
 endif
 #---------------------------------------------------------------------------------------
-
-# all	:	$(OUTPUT).nro
-# 	cp -f $(OUTPUT).nro  /mnt/c/Users/Hashib/AppData/Roaming/yuzu/sdmc/switch
